@@ -52,7 +52,15 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
             self.present(alert, animated: true, completion: nil)
     }
 
+    var isUploading = false
+
     @IBAction func uploadButtonClicked(_ sender: Any) {
+        if isUploading {
+            return
+        }
+
+        isUploading = true
+
         let storage = Storage.storage()
         let storageReferance = storage.reference()
         
@@ -81,6 +89,7 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
                                                  "likes" : 0] as [String : Any]
                             
                             firestoreReference = firestoreDatabase.collection("Posts").addDocument(data: firestorePost,completion: { error in
+                                self.isUploading = false
                                 if error != nil{
                                     self.makeAlert(titleInput: "Error", messageInput: error?.localizedDescription ?? "Error")
                                 } else {

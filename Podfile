@@ -11,6 +11,7 @@ pod 'FirebaseFirestore'
 pod 'FirebaseAuth'
 pod 'FirebaseStorage'
 pod 'FirebaseAnalytics'
+pod 'SDWebImage', '~> 5.0'
   # Pods for InstaClone'
 
 end
