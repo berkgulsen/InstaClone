@@ -16,6 +16,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     var userCommentArray = [String]()
     var userLikeArray = [Int]()
     var userImageArray = [String]()
+    var documentIdArray = [String]()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -33,15 +34,17 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             if error != nil {
                 print(error?.localizedDescription)
             } else {
-                if snapshot?.isEmpty != nil {
+                if snapshot?.isEmpty != true {
                     
                     self.userEmailArray.removeAll(keepingCapacity: false)
                     self.userLikeArray.removeAll(keepingCapacity: false)
                     self.userCommentArray.removeAll(keepingCapacity: false)
                     self.userImageArray.removeAll(keepingCapacity: false)
+                    self.documentIdArray.removeAll(keepingCapacity: false)
                     
                     for document in snapshot!.documents {
                         let documentID = document.documentID
+                        self.documentIdArray.append(documentID)
                         
                         if let postedBy = document.get("postedBy") as? String {
                             self.userEmailArray.append(postedBy)
@@ -75,6 +78,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.likeLabel.text = String(userLikeArray[indexPath.row])
         cell.commentLabel.text = userCommentArray[indexPath.row]
         cell.userImageView.sd_setImage(with: URL(string: userImageArray[indexPath.row]))
+        cell.documentIdLabel.text = documentIdArray[indexPath.row]
         return cell
     }
 }

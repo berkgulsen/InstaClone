@@ -166,6 +166,12 @@
                                                         <action selector="likeButtonClicked:" destination="eeL-5v-5Oc" eventType="touchUpInside" id="kqz-sb-lLB"/>
                                                     </connections>
                                                 </button>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ilT-6W-P1P">
+                                                    <rect key="frame" x="352" y="11" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="gCg-gN-Ezv" firstAttribute="trailing" secondItem="KnJ-NN-C4O" secondAttribute="trailing" id="0Fp-8P-pES"/>
@@ -175,6 +181,8 @@
                                                 <constraint firstItem="Ol7-uy-e5w" firstAttribute="leading" secondItem="PZK-dh-rku" secondAttribute="leadingMargin" constant="-9" id="Rjm-Eb-dks"/>
                                                 <constraint firstItem="uqq-4z-Tc6" firstAttribute="leading" secondItem="gCg-gN-Ezv" secondAttribute="leading" id="SlW-y0-WAn"/>
                                                 <constraint firstItem="wmf-Tt-ifA" firstAttribute="top" secondItem="PZK-dh-rku" secondAttribute="topMargin" id="VKi-KN-R6A"/>
+                                                <constraint firstItem="ilT-6W-P1P" firstAttribute="trailing" secondItem="wmf-Tt-ifA" secondAttribute="trailing" id="WrL-Pc-GFm"/>
+                                                <constraint firstItem="ilT-6W-P1P" firstAttribute="top" secondItem="wmf-Tt-ifA" secondAttribute="top" id="Yrg-wk-XdA"/>
                                                 <constraint firstItem="gCg-gN-Ezv" firstAttribute="top" secondItem="uqq-4z-Tc6" secondAttribute="bottom" constant="8" id="a73-He-dnM"/>
                                                 <constraint firstItem="Ol7-uy-e5w" firstAttribute="top" secondItem="gCg-gN-Ezv" secondAttribute="bottom" constant="8" id="cKx-nC-bt8"/>
                                                 <constraint firstItem="uqq-4z-Tc6" firstAttribute="trailing" secondItem="gCg-gN-Ezv" secondAttribute="trailing" id="ema-X3-Gyc"/>
@@ -187,6 +195,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="commentLabel" destination="gCg-gN-Ezv" id="4NM-sJ-UzQ"/>
+                                            <outlet property="documentIdLabel" destination="ilT-6W-P1P" id="bZa-qe-3L3"/>
                                             <outlet property="likeLabel" destination="KnJ-NN-C4O" id="nsz-Z8-tk4"/>
                                             <outlet property="userEmailLabel" destination="wmf-Tt-ifA" id="Mms-e0-flo"/>
                                             <outlet property="userImageView" destination="uqq-4z-Tc6" id="JW6-Q2-6VO"/>
